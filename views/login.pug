@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+html(lang="en")
+    head
+        include ./partials/header
+    body.login
+        .contenedor-formulario
+            h1 Iniciar Sesion En Project Barrios
+            if(mensaje.error)
+                p.alerta.error= mensaje.error
+            form(action="/login" method="POST" class="caja caja-login" id="formulario")
+                .campo
+                    label(for="email") Email
+                    input(type="email", name="email", value= email id="email", placeholder="Escribe tu email", required)
+                .campo
+                    label(for="password") Password
+                    input(type="password", name="password", value= password id="password", placeholder="Escribe tu password", required)
+
+                .campo.enviar
+                    input(class="boton", value="Iniciar Sesion", type="submit")
+                .campo
+                    a(href="/registrar") ¿No tienes cuenta?     
+                        span.mensaje-accion Registrate aqui
+
+     

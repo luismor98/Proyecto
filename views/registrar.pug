@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+html(lang="en")
+    head
+        include ./partials/header
+    body.login
+        .contenedor-formulario
+            h1 Registrate En Projects Barrios
+            if(mensajeError)
+                .errores
+                    for categoria of Object.keys(mensajeError)
+                        for erro of mensajeError[categoria]
+                            .alerta(class=`${categoria}`)
+                                p= erro
+            form(action="/registrar" method="POST" class="caja caja-login" id="formulario")
+                .campo
+                    label(for="email") Email
+                    input(type="email", name="email", value= email id="email", placeholder="Escribe tu email", required)
+                .campo
+                    label(for="password") Password
+                    input(type="password", name="password", value= password id="password", placeholder="Escribe tu password", required)
+
+                .campo.enviar
+                    input(class="boton", value="Registrarme", type="submit")
+                .campo
+                    a(href="/login") ¿Ya tienes cuenta? 
+                        span.mensaje-accion Inicia Sesión
+
+     

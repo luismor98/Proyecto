@@ -1,0 +1,9 @@
+extends ./layout/index
+block principal
+    .contenido-principal
+        h1 #{nombre}
+        if(error)
+            each erro of error
+                .alerta.error= erro.error
+        include ./mixins/form
+        +form(proyecto)
